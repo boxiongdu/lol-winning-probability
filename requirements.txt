@@ -1,0 +1,5 @@
+# Initial scaffold: no runtime dependencies yet.
+# Add exact tested versions as components are implemented.
+# Planned: requests, python-dotenv, PostgreSQL driver, pandas,
+# scikit-learn, streamlit, plotly. Pin Airflow separately with
+# its compatible constraints when the orchestration runtime is added.
