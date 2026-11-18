@@ -2,6 +2,8 @@
 import time
 from urllib.parse import quote
 import requests
+import math
+from src.errors import ConfigurationError
 
 REGIONS = {"americas", "europe", "asia", "sea"}
 
@@ -18,9 +20,9 @@ class RiotClient:
     def __init__(self, api_key, region="americas", interval=1.3, retries=4,
                  session=None, sleep=time.sleep, clock=time.monotonic):
         if not api_key or not api_key.strip():
-            raise ValueError("Set RIOT_API_KEY in the environment or local .env")
-        if region not in REGIONS or interval < 0 or retries < 0:
-            raise ValueError("Invalid Riot region, request interval, or retry count")
+            raise ConfigurationError("RIOT_API_KEY is missing. Set it in the repository-root .env or environment.")
+        if region not in REGIONS or not math.isfinite(interval) or interval < 0 or retries < 0:
+            raise ConfigurationError("Use a regional RIOT_REGION (americas/europe/asia/sea), a finite nonnegative RIOT_REQUEST_INTERVAL, and a nonnegative retry count.")
         self.region = region
         self.session = session or requests.Session()
         self.session.headers.update({"X-Riot-Token": api_key})

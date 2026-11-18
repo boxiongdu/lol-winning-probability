@@ -135,3 +135,21 @@ Do not expose final blue_win or duration as input features.
 Member D can call `discover`, `process` and Database methods from Airflow task
 wrappers or use the CLI and capture its JSON metrics. No Airflow runtime is added
 in Member A's scope. Review the SQL contract with B/C before extending it.
+
+## Troubleshooting configuration errors
+Update to the latest feature/data-ingestion branch if you see the old generic
+`ValueError: check configuration, inputs and database` message. The CLI now names
+missing RIOT_API_KEY or DATABASE_URL, invalid numeric environment settings, seed
+JSON shape/syntax errors, missing input files, and database connection failures.
+It does not print key values, connection strings, or file contents.
+
+For Davemon#NA1, configs/seeds.local.json must contain an array:
+
+```json
+[{"game_name": "Davemon", "tag_line": "NA1"}]
+```
+
+The `.env` file belongs at the repository root, next to README.md and compose.yaml;
+copy `.env.example`, then fill in RIOT_API_KEY and keep a valid DATABASE_URL.
+Exported environment variables take precedence over `.env`, including an exported
+empty setting. Check for an old exported setting if editing `.env` has no effect.

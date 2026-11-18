@@ -1,20 +1,26 @@
 """Callable ingestion tasks suitable for Airflow wrappers and the command line."""
 import json
+from src.errors import InputError
 from .client import RiotError
 from .normalize import ValidationError, normalize, exclusion
 
 
 def read_seeds(path):
     """Read local seed JSON with either a PUUID or game_name/tag_line per player."""
-    seeds = json.loads(path.read_text())
+    try:
+        seeds = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise InputError(f"Seed JSON is invalid at line {exc.lineno}, column {exc.colno}. Use an array of player objects.") from None
+    except UnicodeDecodeError:
+        raise InputError("Seed file must be UTF-8 JSON.") from None
     if not isinstance(seeds, list) or not seeds:
-        raise ValueError("Seed file must contain a nonempty JSON array")
+        raise InputError("Seed file must contain a nonempty JSON array of player objects (wrap the objects in square brackets).")
     for seed in seeds:
         if not isinstance(seed, dict) or not (
             isinstance(seed.get("puuid"), str) and seed["puuid"].strip()
             or all(isinstance(seed.get(k), str) and seed[k].strip() for k in ("game_name", "tag_line"))
         ):
-            raise ValueError("Each seed needs puuid or game_name and tag_line")
+            raise InputError("Each seed needs a nonempty puuid, or both game_name and tag_line.")
     return seeds
 
 
@@ -89,11 +95,11 @@ def load_fixture(db, region, directory):
         match_id = path.name.removesuffix(".match.json")
         timeline_path = directory / f"{match_id}.timeline.json"
         if not timeline_path.is_file():
-            raise ValueError(f"Missing timeline for fixture {match_id}")
+            raise InputError("A fixture match is missing its corresponding .timeline.json file.")
         db.enqueue(region, match_id)
         for endpoint, source in (("match", path), ("timeline", timeline_path)):
             db.save_raw(region, match_id, endpoint, json.loads(source.read_text()))
         count += 1
     if not count:
-        raise ValueError("No fixture pairs found")
+        raise InputError("No fixture pairs found. Check --directory for .match.json and .timeline.json files.")
     return count
