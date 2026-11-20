@@ -1,0 +1,35 @@
+{
+  "id": "week8_dragon",
+  "version": 1,
+  "event": "A dragon is alive. Blue can reach it first, and Red's mid tower is damaged.",
+  "actions": {
+    "contest_dragon": {
+      "label": "Contest dragon",
+      "success_chance": 0.60,
+      "success": {
+        "seconds": 30,
+        "blue": {"dragons_secured": 1},
+        "red": {}
+      },
+      "failure": {
+        "seconds": 35,
+        "blue": {},
+        "red": {"dragons_secured": 1}
+      }
+    },
+    "push_mid_tower": {
+      "label": "Push mid tower",
+      "success_chance": 0.75,
+      "success": {
+        "seconds": 25,
+        "blue": {"towers_destroyed": 1},
+        "red": {"dragons_secured": 1}
+      },
+      "failure": {
+        "seconds": 30,
+        "blue": {},
+        "red": {"dragons_secured": 1}
+      }
+    }
+  }
+}
