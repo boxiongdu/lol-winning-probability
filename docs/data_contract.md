@@ -1,6 +1,6 @@
 # Initial shared data contract
 
-Proposal to confirm before implementation; no database migrations exist yet.
+The Week 8 storage schema is implemented in `sql/001_ingestion.sql`; see `data_dictionary.md`. Model and game interfaces below remain proposals for B/C to confirm.
 
 ## Historical states
 One row per (match_id, timestamp_ms). Include game start time and patch for

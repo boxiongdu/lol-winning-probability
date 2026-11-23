@@ -34,3 +34,7 @@ airflow_home/
 .DS_Store
 .vscode/
 .idea/
+# Private seed identities and local database exports
+configs/seeds.local.json
+*.sql.gz
+.pgtest/

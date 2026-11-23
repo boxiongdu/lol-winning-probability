@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "matchId": "DEMO_1",
+    "participants": [
+      "synthetic-player-1",
+      "synthetic-player-2",
+      "synthetic-player-3",
+      "synthetic-player-4",
+      "synthetic-player-5",
+      "synthetic-player-6",
+      "synthetic-player-7",
+      "synthetic-player-8",
+      "synthetic-player-9",
+      "synthetic-player-10"
+    ]
+  },
+  "info": {
+    "gameStartTimestamp": 1794528000000,
+    "gameDuration": 1200,
+    "gameVersion": "16.22.1",
+    "queueId": 420,
+    "mapId": 11,
+    "participants": [
+      {
+        "participantId": 1,
+        "puuid": "synthetic-player-1",
+        "teamId": 100,
+        "championId": 1,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 2,
+        "puuid": "synthetic-player-2",
+        "teamId": 100,
+        "championId": 2,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 3,
+        "puuid": "synthetic-player-3",
+        "teamId": 100,
+        "championId": 3,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 4,
+        "puuid": "synthetic-player-4",
+        "teamId": 100,
+        "championId": 4,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 5,
+        "puuid": "synthetic-player-5",
+        "teamId": 100,
+        "championId": 5,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 6,
+        "puuid": "synthetic-player-6",
+        "teamId": 200,
+        "championId": 6,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 7,
+        "puuid": "synthetic-player-7",
+        "teamId": 200,
+        "championId": 7,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 8,
+        "puuid": "synthetic-player-8",
+        "teamId": 200,
+        "championId": 8,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 9,
+        "puuid": "synthetic-player-9",
+        "teamId": 200,
+        "championId": 9,
+        "gameEndedInEarlySurrender": false
+      },
+      {
+        "participantId": 10,
+        "puuid": "synthetic-player-10",
+        "teamId": 200,
+        "championId": 10,
+        "gameEndedInEarlySurrender": false
+      }
+    ],
+    "teams": [
+      {
+        "teamId": 100,
+        "win": true
+      },
+      {
+        "teamId": 200,
+        "win": false
+      }
+    ]
+  }
+}

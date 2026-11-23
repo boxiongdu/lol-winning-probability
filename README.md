@@ -6,7 +6,7 @@ An interactive strategy simulation powered by a win-probability model trained on
 
 ## Project status
 
-**Initial repository scaffold.** Ingestion, database tables, model training, Airflow tasks, and the playable interface are not implemented yet. The setup below prepares a development environment; it does not launch the game.
+**Member A Week 8 implementation.** API ingestion, PostgreSQL storage, normalization, validation, offline rebuild and automated tests are implemented on this branch. Actual 100-match collection requires your Riot key and local seed players. Modeling, Airflow orchestration and gameplay remain in their assigned workstreams. See the [Member A runbook](docs/member_a_week8.md).
 
 ## Final deliverable
 
@@ -59,7 +59,7 @@ Use Python 3.11 as the initial team baseline. Run from the repository root:
 ```bash
 git clone https://github.com/boxiongdu/lol-winning-probability.git
 cd lol-winning-probability
-git switch dev
+git switch feature/data-ingestion
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -68,9 +68,33 @@ cp .env.example .env
 
 On Windows PowerShell activate with `.venv\\Scripts\\Activate.ps1` and copy with `Copy-Item .env.example .env`.
 
-The requirements file is intentionally a placeholder until components are implemented. Add and pin tested dependencies when introduced. Planned tools are PostgreSQL, Airflow, scikit-learn, Streamlit, Plotly, and Docker Compose. Docker and application launch commands will be documented when those files exist.
+Start the local database and initialize the schema:
 
-Put your own Riot key in the local `.env`; never commit credentials. Configuration names are reserved in `.env.example`, but configuration loading is not implemented.
+```bash
+docker compose up -d --wait db
+python -m src.ingestion init-db
+```
+
+For a synthetic offline smoke test in a demo database:
+
+```bash
+python -m src.ingestion load-fixture --directory data/sample
+python -m src.ingestion rebuild
+python -m src.ingestion status
+```
+
+For real collection use a clean database, set RIOT_API_KEY in .env, and copy
+configs/seeds.example.json to configs/seeds.local.json with real seed players:
+
+```bash
+python -m src.ingestion collect --seeds configs/seeds.local.json --target 100
+```
+
+See the runbook for date filters, resume behavior, tests and expected counts.
+The Compose file currently runs PostgreSQL only. Airflow and the game will be
+added by the other workstreams.
+
+Put your own Riot key in the local `.env`; never commit credentials. The CLI loads the repository `.env` without overriding exported environment variables. Development keys expire; collection stops clearly on authentication errors.
 
 API reference: https://developer.riotgames.com/apis#match-v5
 
