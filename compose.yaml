@@ -1,3 +1,13 @@
+# Local development stack. All ports bind to 127.0.0.1 only.
+#   docker compose up -d --wait db        # database only (Member A runbook)
+#   docker compose up -d --build          # database + game app + Airflow
+# App: http://localhost:8501   Airflow: http://localhost:8080
+x-project-env: &project-env
+  DATABASE_URL: postgresql://rift:${POSTGRES_PASSWORD:-rift_local}@db:5432/rift
+  PYTHONPATH: /opt/rift
+  RIFT_ROOT: /opt/rift
+  RANDOM_SEED: ${RANDOM_SEED:-42}
+
 services:
   db:
     image: postgres:16.6
@@ -14,5 +24,63 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    environment:
+      <<: *project-env
+    volumes:
+      - .:/opt/rift
+    ports:
+      - "127.0.0.1:8501:8501"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  # Airflow keeps its own metadata database, separate from the project data.
+  airflow-db:
+    image: postgres:16.6
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  airflow:
+    build:
+      context: .
+      dockerfile: docker/airflow.Dockerfile
+    command: standalone
+    user: "${AIRFLOW_UID:-50000}:0"  # Linux: set AIRFLOW_UID=$(id -u) so it can write ./models
+    environment:
+      <<: *project-env
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/rift/dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DAG_PROCESSOR__REFRESH_INTERVAL: "30"
+      # Local-only convenience: no login on the loopback-bound UI. Never expose this port.
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+    volumes:
+      - .:/opt/rift
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      airflow-db:
+        condition: service_healthy
+
 volumes:
   postgres_data:
+  airflow_db_data:

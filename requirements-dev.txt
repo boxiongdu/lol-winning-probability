@@ -1,2 +1,4 @@
 -r requirements.txt
+-r requirements-modeling.txt
+-r requirements-app.txt
 pytest==8.3.3

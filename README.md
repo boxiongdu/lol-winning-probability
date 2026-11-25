@@ -6,7 +6,7 @@ An interactive strategy simulation powered by a win-probability model trained on
 
 ## Project status
 
-**Member A Week 8 implementation.** API ingestion, PostgreSQL storage, normalization, validation, offline rebuild and automated tests are implemented on this branch. Actual 100-match collection requires your Riot key and local seed players. Modeling, Airflow orchestration and gameplay remain in their assigned workstreams. See the [Member A runbook](docs/member_a_week8.md).
+**Member A Week 8 implementation.** API ingestion, PostgreSQL storage, normalization, validation, offline rebuild and automated tests are implemented on this branch. Actual 100-match collection requires your Riot key and local seed players. Week 8 handoffs: [A ingestion](docs/member_a_week8.md), [B model](docs/member_b_week8.md), [C game engine](docs/member_c_week8.md), [D app and orchestration](docs/member_d_week8.md).
 
 ## Final deliverable
 
@@ -91,8 +91,15 @@ python -m src.ingestion collect --seeds configs/seeds.local.json --target 100
 ```
 
 See the runbook for date filters, resume behavior, tests and expected counts.
-The Compose file currently runs PostgreSQL only. Airflow and the game will be
-added by the other workstreams.
+Play the first decision (needs only the committed model):
+
+```bash
+python -m pip install -r requirements-app.txt
+streamlit run app/streamlit_app.py
+```
+
+Or start everything (database, game at http://localhost:8501, Airflow at
+http://localhost:8080) with `docker compose up -d --build`. See the Member D doc.
 
 Put your own Riot key in the local `.env`; never commit credentials. The CLI loads the repository `.env` without overriding exported environment variables. Development keys expire; collection stops clearly on authentication errors.
 
