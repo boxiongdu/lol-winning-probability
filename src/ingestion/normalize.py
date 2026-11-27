@@ -66,6 +66,8 @@ def normalize(match, timeline, expected_id, region):
             raise ValidationError("Missing game version")
         participants = [(expected_id, p["participantId"], p["teamId"],
                          integer(p["championId"], "championId", 1)) for p in players]
+        if len({p[3] for p in participants}) != 10:
+            raise ValidationError("Expected ten unique champion picks for ranked Summoner's Rift")
         frames, events, last = [], [], -1
         if len(ti["frames"]) < 2:
             raise ValidationError("Expected at least two timeline frames")
@@ -112,8 +114,10 @@ def normalize(match, timeline, expected_id, region):
         raise ValidationError(f"Missing or invalid payload structure ({type(exc).__name__})") from None
 
 
-def exclusion(record, queue=420, map_id=11, min_duration=300):
+def exclusion(record, queue=420, map_id=11, min_duration=300, patch=None):
     """Return a documented policy reason, distinct from malformed data."""
+    if patch is not None and not (record["patch"] == patch or record["patch"].startswith(patch + ".")):
+        return "patch_mismatch"
     if record["queue_id"] != queue:
         return "queue_mismatch"
     if record["map_id"] != map_id:
