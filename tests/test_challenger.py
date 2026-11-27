@@ -12,7 +12,7 @@ from src.ingestion.audit import champion_audit
 
 class FakeClient:
     region = "americas"
-    retries = 0
+    retry_count = 0
 
     def __init__(self, payloads, size=6, players=2, fail_detail_at=None, fail_timeline=False):
         self.payloads = payloads
