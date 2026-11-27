@@ -64,7 +64,7 @@ def test_migrations_are_repeatable_and_preserve_data(db, payloads):
     before = db.counts("americas")
     db.initialize()
     assert db.counts("americas") == before
-    assert db.conn.execute("SELECT count(*) AS n FROM schema_migrations").fetchone()["n"] == 2
+    assert db.conn.execute("SELECT count(*) AS n FROM schema_migrations").fetchone()["n"] == 3
 
 
 def test_modified_migration_rejected_atomically(db, tmp_path):
@@ -73,7 +73,7 @@ def test_modified_migration_rejected_atomically(db, tmp_path):
         (tmp_path/path.name).write_bytes(path.read_bytes())
     (tmp_path/"001_ingestion.sql").write_text("-- changed\n")
     with pytest.raises(MigrationError): migrate(db.conn, tmp_path)
-    assert db.conn.execute("SELECT count(*) AS n FROM schema_migrations").fetchone()["n"] == 2
+    assert db.conn.execute("SELECT count(*) AS n FROM schema_migrations").fetchone()["n"] == 3
 
 
 def test_upgrade_week8_schema_preserves_raw_and_normalized(db, payloads):

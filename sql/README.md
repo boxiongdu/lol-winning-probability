@@ -12,3 +12,4 @@ skipped; changed checksums are rejected. Add a new numbered file for future chan
 Legacy Week 8 databases without a ledger are supported: idempotent 001 runs once
 before 002. No data reset is required. Back up before upgrading. Use a dedicated
 project database/schema. See docs/member_a_week9.md and docs/data_dictionary.md.
+- 003_sampling.sql: frozen Challenger sampling_runs and sampling_matches membership.

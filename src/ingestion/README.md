@@ -240,3 +240,11 @@ and collection/rebuild policy; use the actual agreed patch. See
 collection, versioned migrations and the session persistence interface for C/D.
 Full pg_dump backups now include session/transition records and schema_migrations.
 Restore them with matching code into an empty database using the procedure above.
+
+## Automatic Challenger collection (no manual player IDs)
+
+Use `collect-challenger` to fetch the full Challenger solo/duo roster and randomly
+select up to 10 eligible matches per player in a fixed window. The sampler saves
+and resumes a private manifest, deduplicates globally, and processes only its
+frozen selection. See [Challenger sampling](../../docs/challenger_sampling.md) for
+setup, date/patch filters, database isolation, progress and sample-specific audits.

@@ -224,3 +224,11 @@ rollback after a failed snapshot write. No Riot key is used by tests.
 Production acceptance additionally requires A to run the audit on real data and
 share its report with B. C/D integration and the actual three-event game remain
 other agents' work; these tests only supply fixed states to verify A's storage.
+
+## Automatic Challenger sampling extension
+
+The new `collect-challenger` command discovers every player in a saved Challenger
+roster and samples up to 10 eligible matches per player. Manual seed files remain
+supported by the original collect command. Migration 003 records frozen sample
+membership; audit can filter with --sample-id. See challenger_sampling.md for the
+actual run and handoff procedure. B/C/D code is unchanged.
