@@ -1,11 +1,11 @@
 """PostgreSQL persistence with independently committed raw response checkpoints."""
 import hashlib
 import json
-from pathlib import Path
 from uuid import uuid4
 import psycopg
 from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb
+from .migrations import migrate
 
 
 class Database:
@@ -19,10 +19,8 @@ class Database:
         self.conn.close()
 
     def initialize(self):
-        """Apply the idempotent initial migration to a dedicated project database."""
-        sql = Path(__file__).resolve().parents[2] / "sql" / "001_ingestion.sql"
-        with self.conn.transaction():
-            self.conn.execute(sql.read_text())
+        """Apply pending versioned migrations, preserving existing records."""
+        migrate(self.conn)
 
     def start_run(self, command, region):
         run_id = uuid4()

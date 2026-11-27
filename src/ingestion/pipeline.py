@@ -36,7 +36,7 @@ def discover(db, client, seeds, queue=420, per_player=200, start_time=None, end_
 
 
 def process(db, region, client=None, target=None, queue=420, map_id=11, min_duration=300,
-            start_time=None, end_time=None):
+            start_time=None, end_time=None, patch=None, match_ids=None):
     """Load cached responses or fetch missing ones, then validate and normalize.
 
     With no client this rebuilds all available raw pairs without any network calls.
@@ -44,7 +44,8 @@ def process(db, region, client=None, target=None, queue=420, map_id=11, min_dura
     Run only one collector per database/region to avoid redundant API requests.
     """
     metrics = dict(accepted=0, excluded=0, failed=0, incomplete=0, fetched=0, cached=0)
-    for match_id in db.candidates(region):
+    candidates = db.candidates(region) if match_ids is None else list(dict.fromkeys(match_ids))
+    for match_id in candidates:
         if target is not None and metrics["accepted"] >= target:
             break
         try:
@@ -63,7 +64,7 @@ def process(db, region, client=None, target=None, queue=420, map_id=11, min_dura
                 db.mark(region, match_id, "pending", "missing_raw_response")
                 continue
             normalized = normalize(*payloads, match_id, region)
-            reason = exclusion(normalized[0], queue, map_id, min_duration)
+            reason = exclusion(normalized[0], queue, map_id, min_duration, patch)
             start_seconds = normalized[0]["game_start_ms"] / 1000
             if start_time is not None and start_seconds < start_time:
                 reason = "outside_time_window"

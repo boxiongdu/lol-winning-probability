@@ -224,3 +224,27 @@ Fill in actual values; no collection result is assumed by this README.
 After restoration, Member B confirms the checksum (if supplied), matching
 counts, and readable sample rows. Keep the archive as a versioned handoff
 snapshot so subsequent work can reproduce the same dataset.
+
+## Week 9 additions
+
+Run `python -m src.ingestion init-db` to apply the additive storage migration.
+Generate the champion coverage handoff with:
+
+```bash
+python -m src.ingestion audit --region americas > data/processed/champion_coverage.json
+```
+
+Create data/processed first if needed. Optional `--patch 16.22` restricts the audit
+and collection/rebuild policy; use the actual agreed patch. See
+[Member A Week 9](../../docs/member_a_week9.md) for report interpretation, expanded
+collection, versioned migrations and the session persistence interface for C/D.
+Full pg_dump backups now include session/transition records and schema_migrations.
+Restore them with matching code into an empty database using the procedure above.
+
+## Automatic Challenger collection (no manual player IDs)
+
+Use `collect-challenger` to fetch the full Challenger solo/duo roster and randomly
+select up to 10 eligible matches per player in a fixed window. The sampler saves
+and resumes a private manifest, deduplicates globally, and processes only its
+frozen selection. See [Challenger sampling](../../docs/challenger_sampling.md) for
+setup, date/patch filters, database isolation, progress and sample-specific audits.

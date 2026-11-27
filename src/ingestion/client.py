@@ -6,6 +6,12 @@ import math
 from src.errors import ConfigurationError
 
 REGIONS = {"americas", "europe", "asia", "sea"}
+PLATFORM_REGIONS = {
+    "na1": "americas", "br1": "americas", "la1": "americas", "la2": "americas",
+    "euw1": "europe", "eun1": "europe", "tr1": "europe", "ru": "europe",
+    "kr": "asia", "jp1": "asia", "oc1": "sea", "ph2": "sea", "sg2": "sea",
+    "th2": "sea", "tw2": "sea", "vn2": "sea",
+}
 
 
 class RiotError(RuntimeError):
@@ -30,8 +36,11 @@ class RiotClient:
         self.sleep, self.clock, self.last_request = sleep, clock, None
         self.requests = self.retry_count = 0
 
-    def get(self, path, params=None):
+    def get(self, path, params=None, platform=None):
         """Retry transient errors; wait at least Retry-After after HTTP 429."""
+        if platform is not None and platform not in PLATFORM_REGIONS:
+            raise ConfigurationError("Unknown Riot platform")
+        host = platform or self.region
         for attempt in range(self.retries + 1):
             if self.last_request is not None:
                 self.sleep(max(0, self.interval - (self.clock() - self.last_request)))
@@ -39,7 +48,7 @@ class RiotClient:
             self.requests += 1
             try:
                 response = self.session.get(
-                    f"https://{self.region}.api.riotgames.com{path}",
+                    f"https://{host}.api.riotgames.com{path}",
                     params=params, timeout=(10, 45), allow_redirects=False,
                 )
             except (requests.Timeout, requests.ConnectionError):
@@ -100,3 +109,35 @@ class RiotClient:
 
     def timeline(self, match_id):
         return self.get(f"/lol/match/v5/matches/{quote(match_id, safe='')}/timeline")
+
+
+    def challenger_roster(self, platform="na1"):
+        """League-V4 uses a platform host, while Match-V5 uses a regional host."""
+        if PLATFORM_REGIONS.get(platform) != self.region:
+            raise ConfigurationError("Platform does not match this client's regional route")
+        return self.get("/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5", platform=platform)
+
+    def history_pool(self, puuid, *, start_time, end_time, limit=1000):
+        """Read the entire bounded history window, or refuse a truncated pool.
+
+        One extra ID probes for truncation at the configured safety limit. An
+        exact-size window is allowed, but a larger one must be narrowed or its
+        safety limit increased before sampling.
+        """
+        if limit < 1:
+            raise ValueError("History safety limit must be positive")
+        ids, returned = set(), 0
+        for start in range(0, limit + 1, 100):
+            count = min(100, limit + 1 - start)
+            page = self.get(f"/lol/match/v5/matches/by-puuid/{quote(puuid, safe='')}/ids",
+                            dict(queue=420, start=start, count=count,
+                                 startTime=start_time, endTime=end_time))
+            if not isinstance(page, list) or any(not isinstance(x, str) for x in page):
+                raise RiotError("Invalid match history response")
+            returned += len(page)
+            if returned > limit:
+                raise ConfigurationError("History window exceeds --history-limit; use a narrower window or a new manifest with a larger limit")
+            ids.update(page)
+            if len(page) < count:
+                break
+        return sorted(ids)

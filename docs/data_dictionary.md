@@ -34,3 +34,37 @@ responses still contain these identifiers. Store/restrict raw data accordingly.
 SHA256 is computed over UTF-8 JSON with sorted keys and compact separators; it
 identifies canonical payload content, not the original HTTP response bytes.
 Raw cache preserves the first successful payload; no replacement occurs silently.
+
+## Week 9 additive relations (migration 002)
+
+| Relation | Grain / key | Contents |
+| --- | --- | --- |
+| schema_migrations | numbered SQL filename | Applied SHA256 and timestamp |
+| match_compositions | historical match_id | Team champion-ID arrays ordered by participant_id, composition_valid, patch/queue/time and outcome |
+| game_sessions | session UUID | Initial/current JSONB state, pinned versions, seed, phase, revision, event_count, latest prediction, winner and timestamps |
+| game_transitions | session UUID + transition UUID | Unique sequence, request hash, kind, event/action IDs, before/after states and predictions, resolution metadata, resulting phase/event_count/winner |
+
+Historical and simulated data are separate. Session tables have no dependency on
+historical match deletion/rebuild. composition_valid requires ten unique positive
+IDs and five per side; audit excludes DEMO_1 and invalid compositions. A new NOT VALID
+positive-ID constraint protects new participant writes while allowing legacy data
+to be audited. Current normalization rejects duplicate champion picks.
+
+Session seeds fit a nonnegative signed BIGINT. States use elapsed_seconds; historical
+frames retain timestamp_ms. Pick arrays and version references are immutable within
+a session. Every transition increments revision, while only decisions increment
+event_count. The full storage contract and error handling are in member_a_week9.md.
+No simulation effects or model encodings are defined in these tables.
+
+## Frozen Challenger samples (migration 003)
+
+| Relation | Key | Contents |
+| --- | --- | --- |
+| sampling_runs | sample_id UUID | Immutable selection SHA256, private manifest JSONB, latest download status/metrics and timestamps |
+| sampling_matches | sample_id, match_id | Unique selected match and source_players (number of seed players selecting it) |
+
+Membership exists before downloads and survives unavailable/invalid timelines;
+there is deliberately no foreign key from sampling_matches to normalized matches.
+Join to matches/match_compositions to see usable sampled data. Older unrelated
+queue records are not downloaded by this command. A mixed database still contains
+older normalized matches; use the membership join or a dedicated sample database.
