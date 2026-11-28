@@ -6,6 +6,11 @@ An interactive strategy simulation powered by a win-probability model trained on
 
 ## Project status
 
+Member B's experimental champion-aware opening/in-game models and the 2443-match
+evaluation are available: [API and reproduction](docs/member_b_champion_models.md),
+[measured results](reports/champion_v1.md). Champion features did not demonstrate
+an improvement over the baselines; the existing app remains on its Week 8 API.
+
 **Member A Week 8 implementation.** API ingestion, PostgreSQL storage, normalization, validation, offline rebuild and automated tests are implemented on this branch. Actual 100-match collection requires your Riot key and local seed players. Week 8 handoffs: [A ingestion](docs/member_a_week8.md), [B model](docs/member_b_week8.md), [C game engine](docs/member_c_week8.md), [D app and orchestration](docs/member_d_week8.md).
 
 ## Final deliverable

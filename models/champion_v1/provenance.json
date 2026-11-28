@@ -1,0 +1,27 @@
+{
+  "base_git_revision": "2a5a2db8441a82f62c11142cd902afdddefb1eb4",
+  "dataset_version": "dataset-v1-ca6d65f0ddab40dd40dadd3f51e35992dc8104c3ff61dc34dcbbe16cdb1e4dc5",
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.13",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0"
+  },
+  "source_sha256": {
+    "src/features/__init__.py": "da47696aa17195fb8549df44514c0e62ffa5d2334fce0b0f0584f67a2f00b565",
+    "src/features/champion_dataset.py": "7e5fc33efa8a3730b55a74bd54c16e81112d5d90b6713737f467023b1b1c757c",
+    "src/features/champion_state.py": "9f29cb124c09a16ba43289d8800d98810d76cb249548b552b28b4e9b8ffc6edc",
+    "src/features/composition.py": "ec7470fcf6e236cac28cee58af7f6219edde6d604bc62e08c596cff08f018173",
+    "src/features/dump_dataset.py": "68fb947abbe757cdf2493aa4478f0a80ba93ab79742c93ad9841cee145e533c2",
+    "src/features/snapshots.sql": "424b6932cdd796aedd2d15bf82763aaff265b0aa6f1e06473e2f352b70817385",
+    "src/features/state.py": "f5a93adb1739f15a8ac8b70d26007c318dddedac8ac46bf3c1ff533e4ff8488f",
+    "src/modeling/__init__.py": "400eed7e50802b7914e8e7af01487a7d780c6d29a08d43ed9ac37eed0c55676e",
+    "src/modeling/champion_evaluate.py": "acf06e13d2a36b10a26bec6424d0dd35b8143add8fcda6e0e456442beb30a0d6",
+    "src/modeling/champion_predict.py": "cbc9a9e77b28004aa9d9ab3b0018eace6ff706099151b7d79645132423e42a75",
+    "src/modeling/example_champion.py": "bcfa60b5ab2d421c930f7192b5fe42d6b58eff9ebbec397f232ad8d92beeff67",
+    "src/modeling/predict.py": "dd671c91c68a892f523dd777a83c4b5bdb8652603a7c60cbd558981eb33fb401",
+    "src/modeling/train.py": "dbd6465f3bf516f6fc966cda66586b0b88f6362e47aaeb402e307d54c5305f39",
+    "src/modeling/train_champion.py": "f2ec0766f86b07e42c957f3f3cae78c55eecb736bf8fcad8d2c02c2eb6f8a4dc"
+  },
+  "training_command": "python -m src.modeling.train_champion --dataset DATASET --output NEW_DIRECTORY"
+}

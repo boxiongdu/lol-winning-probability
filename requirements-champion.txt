@@ -1,0 +1,7 @@
+# Reproduction environment: CPython 3.11; inference needs only the standard library.
+-r requirements-modeling.txt
+numpy==2.4.6
+scipy==1.17.1
+joblib==1.6.0
+threadpoolctl==3.8.0
+cloudpickle==3.1.3

@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 
 from src.features.state import FEATURES, features
+from src.modeling.champion_predict import ChampionPredictor, predict_win_probability
 
 DEFAULT_MODEL = Path('models/week8.json')
 

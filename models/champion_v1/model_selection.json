@@ -1,0 +1,1864 @@
+{
+  "C_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "candidates": {
+    "in_game": [
+      {
+        "C": 0.0001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.11096322754546564,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.0,
+                "count": 145,
+                "lower": 0.0,
+                "match_mass": 5.759613487717854,
+                "mean_probability": 0.07405742408549151,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.058222167539557175,
+                "count": 503,
+                "lower": 0.1,
+                "match_mass": 19.026296922393104,
+                "mean_probability": 0.15209192303617428,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.11807301621725474,
+                "count": 789,
+                "lower": 0.2,
+                "match_mass": 29.11715029610494,
+                "mean_probability": 0.254878588248131,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.19283427839497405,
+                "count": 1231,
+                "lower": 0.3,
+                "match_mass": 44.91428197395513,
+                "mean_probability": 0.35428617141006546,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4062954773182325,
+                "count": 3279,
+                "lower": 0.4,
+                "match_mass": 121.88226628956238,
+                "mean_probability": 0.46184310089528635,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.6498790271171458,
+                "count": 2007,
+                "lower": 0.5,
+                "match_mass": 74.4932348190493,
+                "mean_probability": 0.5385969097114615,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.8532605225700017,
+                "count": 873,
+                "lower": 0.6,
+                "match_mass": 32.252086820509376,
+                "mean_probability": 0.6449039649999803,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.9241354014114517,
+                "count": 532,
+                "lower": 0.7,
+                "match_mass": 20.395424561205424,
+                "mean_probability": 0.7491862615683326,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.9566010900632628,
+                "count": 380,
+                "lower": 0.8,
+                "match_mass": 14.662098057562819,
+                "mean_probability": 0.8455974772121272,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9934604871950675,
+                "count": 114,
+                "lower": 0.9,
+                "match_mass": 4.497546771939662,
+                "mean_probability": 0.926666850727553,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4787789548936987
+          },
+          "frame_weighted": {
+            "brier": 0.19322849967663622,
+            "log_loss": 0.5685735124935842
+          },
+          "match_weighted": {
+            "brier": 0.18600747582267552,
+            "log_loss": 0.5525131720160047
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.04109125391761397,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.04247982303871522,
+                "count": 672,
+                "lower": 0.0,
+                "match_mass": 26.239341391497852,
+                "mean_probability": 0.05101979561232464,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.11808320425540013,
+                "count": 762,
+                "lower": 0.1,
+                "match_mass": 28.447649726525253,
+                "mean_probability": 0.14887865967638314,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.18514825464407886,
+                "count": 895,
+                "lower": 0.2,
+                "match_mass": 32.29279785345396,
+                "mean_probability": 0.2515429847110211,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.28076183472745875,
+                "count": 1200,
+                "lower": 0.3,
+                "match_mass": 44.572970897461744,
+                "mean_probability": 0.3538935676624231,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.45086145551371287,
+                "count": 2045,
+                "lower": 0.4,
+                "match_mass": 74.75722138272472,
+                "mean_probability": 0.4516555587973605,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5587294708189245,
+                "count": 1668,
+                "lower": 0.5,
+                "match_mass": 62.175755522516,
+                "mean_probability": 0.5445958008507235,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.7331154398080839,
+                "count": 888,
+                "lower": 0.6,
+                "match_mass": 32.44238363152263,
+                "mean_probability": 0.6469812207401543,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.8621998195078568,
+                "count": 600,
+                "lower": 0.7,
+                "match_mass": 22.547364731844524,
+                "mean_probability": 0.7474805661719711,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.9233394858876336,
+                "count": 557,
+                "lower": 0.8,
+                "match_mass": 21.086891003761274,
+                "mean_probability": 0.8476436007329676,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9757513455287653,
+                "count": 566,
+                "lower": 0.9,
+                "match_mass": 22.43762385869201,
+                "mean_probability": 0.9462814365064957,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.474239954475693
+          },
+          "frame_weighted": {
+            "brier": 0.18391266836375966,
+            "log_loss": 0.5418593626244353
+          },
+          "match_weighted": {
+            "brier": 0.17303345732482125,
+            "log_loss": 0.5152671186194915
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.01,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.022135453055350213,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.059786959604851475,
+                "count": 1023,
+                "lower": 0.0,
+                "match_mass": 40.12992224319863,
+                "mean_probability": 0.04538258576349449,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.1624899505036189,
+                "count": 893,
+                "lower": 0.1,
+                "match_mass": 33.45039859729968,
+                "mean_probability": 0.15086224026992556,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.2847803889192761,
+                "count": 1060,
+                "lower": 0.2,
+                "match_mass": 38.39881296542264,
+                "mean_probability": 0.25165219487313933,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.3837303213023125,
+                "count": 1190,
+                "lower": 0.3,
+                "match_mass": 43.30512268478833,
+                "mean_probability": 0.3513754456059326,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.469141633285911,
+                "count": 1250,
+                "lower": 0.4,
+                "match_mass": 45.23183572891716,
+                "mean_probability": 0.4511823933861347,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5250355491491469,
+                "count": 1196,
+                "lower": 0.5,
+                "match_mass": 43.619845124996516,
+                "mean_probability": 0.5500024687451498,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.6278372847358212,
+                "count": 1050,
+                "lower": 0.6,
+                "match_mass": 38.85890221415791,
+                "mean_probability": 0.6492449990346042,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.7179645838293366,
+                "count": 720,
+                "lower": 0.7,
+                "match_mass": 27.374017307503912,
+                "mean_probability": 0.7454075186193467,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8782623871602312,
+                "count": 680,
+                "lower": 0.8,
+                "match_mass": 25.234346404840856,
+                "mean_probability": 0.8509908234976358,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9643517629379676,
+                "count": 791,
+                "lower": 0.9,
+                "match_mass": 31.396796728874342,
+                "mean_probability": 0.954451649457582,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4719907421190442
+          },
+          "frame_weighted": {
+            "brier": 0.19071391770584656,
+            "log_loss": 0.557872719728502
+          },
+          "match_weighted": {
+            "brier": 0.17795097658506437,
+            "log_loss": 0.524476586295437
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.1,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.048033727661583335,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.08018416158927223,
+                "count": 1216,
+                "lower": 0.0,
+                "match_mass": 47.72859826699924,
+                "mean_probability": 0.04313201301027476,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.2308820452535053,
+                "count": 1032,
+                "lower": 0.1,
+                "match_mass": 38.646464415135824,
+                "mean_probability": 0.14870415234240789,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.2985980344354654,
+                "count": 1062,
+                "lower": 0.2,
+                "match_mass": 38.31443737241915,
+                "mean_probability": 0.25057563015282813,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.41696179390007787,
+                "count": 1028,
+                "lower": 0.3,
+                "match_mass": 36.589383532515924,
+                "mean_probability": 0.34844023249521283,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.47888837816327356,
+                "count": 998,
+                "lower": 0.4,
+                "match_mass": 36.28549765421718,
+                "mean_probability": 0.45056652865851365,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5334437347740582,
+                "count": 1023,
+                "lower": 0.5,
+                "match_mass": 37.10356409315853,
+                "mean_probability": 0.5515490098213643,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.6173628603336174,
+                "count": 953,
+                "lower": 0.6,
+                "match_mass": 35.42698177275949,
+                "mean_probability": 0.6499555538094057,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.6173697734768904,
+                "count": 875,
+                "lower": 0.7,
+                "match_mass": 32.713370799385665,
+                "mean_probability": 0.7472019983807248,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8145812528965575,
+                "count": 717,
+                "lower": 0.8,
+                "match_mass": 26.93687596652837,
+                "mean_probability": 0.8516220440034317,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9495136708559062,
+                "count": 949,
+                "lower": 0.9,
+                "match_mass": 37.25482612688059,
+                "mean_probability": 0.9558971800755608,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47136278693039363
+          },
+          "frame_weighted": {
+            "brier": 0.20043804993564607,
+            "log_loss": 0.5856901640675167
+          },
+          "match_weighted": {
+            "brier": 0.1868779209072441,
+            "log_loss": 0.548366053688151
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 1.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.05316719994897443,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.08744489860100715,
+                "count": 1256,
+                "lower": 0.0,
+                "match_mass": 49.19344399008933,
+                "mean_probability": 0.042546435973068855,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.23393024553177807,
+                "count": 1069,
+                "lower": 0.1,
+                "match_mass": 40.141011980759075,
+                "mean_probability": 0.14788865345431748,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.31869439490283147,
+                "count": 1043,
+                "lower": 0.2,
+                "match_mass": 37.55922387484351,
+                "mean_probability": 0.2503641440182252,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.41719331165822465,
+                "count": 1008,
+                "lower": 0.3,
+                "match_mass": 35.62377985458057,
+                "mean_probability": 0.3488852774480678,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.46869318912921987,
+                "count": 941,
+                "lower": 0.4,
+                "match_mass": 34.368563143218935,
+                "mean_probability": 0.45005705229684323,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5413624087791622,
+                "count": 995,
+                "lower": 0.5,
+                "match_mass": 35.874255960179354,
+                "mean_probability": 0.5504757686842465,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.6072529482477717,
+                "count": 950,
+                "lower": 0.6,
+                "match_mass": 35.49332825709695,
+                "mean_probability": 0.6505279601554553,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.6238476856880892,
+                "count": 864,
+                "lower": 0.7,
+                "match_mass": 32.34888040997828,
+                "mean_probability": 0.7480152990517854,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.7835970962600265,
+                "count": 749,
+                "lower": 0.8,
+                "match_mass": 28.181751191601567,
+                "mean_probability": 0.851118172423507,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9454095251832819,
+                "count": 978,
+                "lower": 0.9,
+                "match_mass": 38.2157613376524,
+                "mean_probability": 0.9565850799679178,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4711354539335865
+          },
+          "frame_weighted": {
+            "brier": 0.20294490838083684,
+            "log_loss": 0.593367054616773
+          },
+          "match_weighted": {
+            "brier": 0.18922691029081104,
+            "log_loss": 0.5551803087910239
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 10.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.05351114713815337,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.09158137872689907,
+                "count": 1267,
+                "lower": 0.0,
+                "match_mass": 49.60969120412854,
+                "mean_probability": 0.04275724816525648,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.2326943156966287,
+                "count": 1070,
+                "lower": 0.1,
+                "match_mass": 40.225282260593836,
+                "mean_probability": 0.14826898540512382,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.3225291014837876,
+                "count": 1045,
+                "lower": 0.2,
+                "match_mass": 37.55547037687148,
+                "mean_probability": 0.25086773014738545,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.41395095624060896,
+                "count": 994,
+                "lower": 0.3,
+                "match_mass": 35.11457103297696,
+                "mean_probability": 0.3490598390149037,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4672106223929282,
+                "count": 951,
+                "lower": 0.4,
+                "match_mass": 34.73093563182782,
+                "mean_probability": 0.4503637077981718,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5432643225177866,
+                "count": 978,
+                "lower": 0.5,
+                "match_mass": 35.26579650648229,
+                "mean_probability": 0.5508696392560328,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.6053804073803395,
+                "count": 953,
+                "lower": 0.6,
+                "match_mass": 35.61196105798781,
+                "mean_probability": 0.6506268581685809,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.62508722782932,
+                "count": 867,
+                "lower": 0.7,
+                "match_mass": 32.44537280647068,
+                "mean_probability": 0.748523423460346,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.783195536072475,
+                "count": 748,
+                "lower": 0.8,
+                "match_mass": 28.165034000746445,
+                "mean_probability": 0.8515439213523041,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9448253756687983,
+                "count": 980,
+                "lower": 0.9,
+                "match_mass": 38.275885121914115,
+                "mean_probability": 0.9567364909975632,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47109593110872733
+          },
+          "frame_weighted": {
+            "brier": 0.20325502527813818,
+            "log_loss": 0.5943362470589597
+          },
+          "match_weighted": {
+            "brier": 0.18951808080553986,
+            "log_loss": 0.5560453139942276
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      }
+    ],
+    "opening": [
+      {
+        "C": 0.0001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.0017058845984537774,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.1,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.2,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.3,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.47956403269754766,
+                "count": 367,
+                "lower": 0.4,
+                "match_mass": 367.0,
+                "mean_probability": 0.48126991729600144,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.5,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.6,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.7,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.8,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.9,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.48126991729600144
+          },
+          "frame_weighted": {
+            "brier": 0.24956742042153765,
+            "log_loss": 0.6922817491962422
+          },
+          "match_weighted": {
+            "brier": 0.24956742042153765,
+            "log_loss": 0.6922817491962422
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      },
+      {
+        "C": 0.001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.0015635578202867206,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.1,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.2,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.3,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.47956403269754766,
+                "count": 367,
+                "lower": 0.4,
+                "match_mass": 367.0,
+                "mean_probability": 0.4811275905178344,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.5,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.6,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.7,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.8,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.9,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4811275905178344
+          },
+          "frame_weighted": {
+            "brier": 0.24942546048031936,
+            "log_loss": 0.6919975852543568
+          },
+          "match_weighted": {
+            "brier": 0.24942546048031936,
+            "log_loss": 0.6919975852543568
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      },
+      {
+        "C": 0.01,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.010841983936416595,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.1,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.2,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.3,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4742647058823529,
+                "count": 272,
+                "lower": 0.4,
+                "match_mass": 272.0,
+                "mean_probability": 0.46735115370055774,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.49473684210526314,
+                "count": 95,
+                "lower": 0.5,
+                "match_mass": 95.0,
+                "mean_probability": 0.516826546433859,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.6,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.7,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.8,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.9,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.48015813547075836
+          },
+          "frame_weighted": {
+            "brier": 0.24910568397203323,
+            "log_loss": 0.6913657611487112
+          },
+          "match_weighted": {
+            "brier": 0.24910568397203323,
+            "log_loss": 0.6913657611487112
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      },
+      {
+        "C": 0.1,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.0682422198399248,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.1,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.7272727272727273,
+                "count": 11,
+                "lower": 0.2,
+                "match_mass": 11.0,
+                "mean_probability": 0.27552665638742774,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.47761194029850745,
+                "count": 67,
+                "lower": 0.3,
+                "match_mass": 67.0,
+                "mean_probability": 0.3594470159483552,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.43448275862068964,
+                "count": 145,
+                "lower": 0.4,
+                "match_mass": 145.0,
+                "mean_probability": 0.4503524970219775,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.514018691588785,
+                "count": 107,
+                "lower": 0.5,
+                "match_mass": 107.0,
+                "mean_probability": 0.5496943954211629,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.5,
+                "count": 30,
+                "lower": 0.6,
+                "match_mass": 30.0,
+                "mean_probability": 0.6320762831711977,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.42857142857142855,
+                "count": 7,
+                "lower": 0.7,
+                "match_mass": 7.0,
+                "mean_probability": 0.7254195852381138,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.8,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.9,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4775814203238567
+          },
+          "frame_weighted": {
+            "brier": 0.2554538864984925,
+            "log_loss": 0.7052234443169725
+          },
+          "match_weighted": {
+            "brier": 0.2554538864984925,
+            "log_loss": 0.7052234443169725
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      },
+      {
+        "C": 1.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.10871116173892133,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.5833333333333334,
+                "count": 12,
+                "lower": 0.1,
+                "match_mass": 12.0,
+                "mean_probability": 0.16830453231113643,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.4411764705882353,
+                "count": 34,
+                "lower": 0.2,
+                "match_mass": 34.0,
+                "mean_probability": 0.25551779969444854,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.4189189189189189,
+                "count": 74,
+                "lower": 0.3,
+                "match_mass": 74.0,
+                "mean_probability": 0.3572115379419042,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.5056179775280899,
+                "count": 89,
+                "lower": 0.4,
+                "match_mass": 89.0,
+                "mean_probability": 0.4503113057444218,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.45569620253164556,
+                "count": 79,
+                "lower": 0.5,
+                "match_mass": 79.0,
+                "mean_probability": 0.5470948107656248,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.5740740740740741,
+                "count": 54,
+                "lower": 0.6,
+                "match_mass": 54.0,
+                "mean_probability": 0.642276687421091,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.4444444444444444,
+                "count": 18,
+                "lower": 0.7,
+                "match_mass": 18.0,
+                "mean_probability": 0.7395149920137499,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.42857142857142855,
+                "count": 7,
+                "lower": 0.8,
+                "match_mass": 7.0,
+                "mean_probability": 0.8429878467160987,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.9,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.475025164988509
+          },
+          "frame_weighted": {
+            "brier": 0.2685263212779953,
+            "log_loss": 0.7385140226946451
+          },
+          "match_weighted": {
+            "brier": 0.2685263212779953,
+            "log_loss": 0.7385140226946451
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      },
+      {
+        "C": 10.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.12439799618651305,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": null,
+                "count": 0,
+                "lower": 0.0,
+                "match_mass": 0.0,
+                "mean_probability": null,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.5294117647058824,
+                "count": 17,
+                "lower": 0.1,
+                "match_mass": 17.0,
+                "mean_probability": 0.15844159550624926,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.4722222222222222,
+                "count": 36,
+                "lower": 0.2,
+                "match_mass": 36.0,
+                "mean_probability": 0.25136360166656563,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.40540540540540543,
+                "count": 74,
+                "lower": 0.3,
+                "match_mass": 74.0,
+                "mean_probability": 0.35568705615465585,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.524390243902439,
+                "count": 82,
+                "lower": 0.4,
+                "match_mass": 82.0,
+                "mean_probability": 0.4524538144364963,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.44155844155844154,
+                "count": 77,
+                "lower": 0.5,
+                "match_mass": 77.0,
+                "mean_probability": 0.551042390090498,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.6,
+                "count": 50,
+                "lower": 0.6,
+                "match_mass": 50.0,
+                "mean_probability": 0.6459403748091916,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.42857142857142855,
+                "count": 21,
+                "lower": 0.7,
+                "match_mass": 21.0,
+                "mean_probability": 0.7414925205812176,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.4444444444444444,
+                "count": 9,
+                "lower": 0.8,
+                "match_mass": 9.0,
+                "mean_probability": 0.845144541734604,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.0,
+                "count": 1,
+                "lower": 0.9,
+                "match_mass": 1.0,
+                "mean_probability": 0.9137897380451743,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47406912274149854
+          },
+          "frame_weighted": {
+            "brier": 0.2728904732571137,
+            "log_loss": 0.7511648557887588
+          },
+          "match_weighted": {
+            "brier": 0.2728904732571137,
+            "log_loss": 0.7511648557887588
+          },
+          "matches": 367,
+          "observations": 367
+        }
+      }
+    ],
+    "statistics_only": [
+      {
+        "C": 0.0001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.10905656386215554,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.0,
+                "count": 147,
+                "lower": 0.0,
+                "match_mass": 5.829149949645621,
+                "mean_probability": 0.07429766156981596,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.05495382156756274,
+                "count": 504,
+                "lower": 0.1,
+                "match_mass": 19.055020317003112,
+                "mean_probability": 0.15312528828422586,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.12446698171781372,
+                "count": 766,
+                "lower": 0.2,
+                "match_mass": 28.166548766900203,
+                "mean_probability": 0.25529975248550574,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.19269395153093916,
+                "count": 1245,
+                "lower": 0.3,
+                "match_mass": 45.60350456573621,
+                "mean_probability": 0.3533104046018839,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4098708771980067,
+                "count": 3344,
+                "lower": 0.4,
+                "match_mass": 124.92188521073496,
+                "mean_probability": 0.46306954810744816,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.6511003558707069,
+                "count": 1948,
+                "lower": 0.5,
+                "match_mass": 71.8277397817675,
+                "mean_probability": 0.5408485484040009,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.8541389315618966,
+                "count": 863,
+                "lower": 0.6,
+                "match_mass": 31.66267274817346,
+                "mean_probability": 0.6449515957567281,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.9241001495329669,
+                "count": 539,
+                "lower": 0.7,
+                "match_mass": 20.634386695093994,
+                "mean_probability": 0.7481882905680591,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.9531953082716871,
+                "count": 383,
+                "lower": 0.8,
+                "match_mass": 14.77676869236669,
+                "mean_probability": 0.8457831892482895,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9934963152934633,
+                "count": 114,
+                "lower": 0.9,
+                "match_mass": 4.522323272578232,
+                "mean_probability": 0.9260657640825792,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47927700852387956
+          },
+          "frame_weighted": {
+            "brier": 0.19345763264894156,
+            "log_loss": 0.5690603595925084
+          },
+          "match_weighted": {
+            "brier": 0.18629199562374577,
+            "log_loss": 0.5531272598821322
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.001,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.054631158821900956,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.035490819993404255,
+                "count": 643,
+                "lower": 0.0,
+                "match_mass": 25.19800716612911,
+                "mean_probability": 0.052209696744747756,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.11365061906588476,
+                "count": 711,
+                "lower": 0.1,
+                "match_mass": 26.44599741870553,
+                "mean_probability": 0.15171391101965756,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.1808590022051638,
+                "count": 906,
+                "lower": 0.2,
+                "match_mass": 32.79387688218105,
+                "mean_probability": 0.24963792232492107,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.3051575678653362,
+                "count": 1101,
+                "lower": 0.3,
+                "match_mass": 40.38310609742854,
+                "mean_probability": 0.3532308115115483,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.41796732525892544,
+                "count": 2393,
+                "lower": 0.4,
+                "match_mass": 89.87149995840704,
+                "mean_probability": 0.46122736194362235,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.59688849818308,
+                "count": 1544,
+                "lower": 0.5,
+                "match_mass": 56.11911925682966,
+                "mean_probability": 0.5436946111560822,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.7431722106825082,
+                "count": 836,
+                "lower": 0.6,
+                "match_mass": 30.900858468462594,
+                "mean_probability": 0.6475646770051301,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.8678713687689202,
+                "count": 638,
+                "lower": 0.7,
+                "match_mass": 23.46289222839155,
+                "mean_probability": 0.7481482799245057,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.9168772987440552,
+                "count": 540,
+                "lower": 0.8,
+                "match_mass": 20.496117276176733,
+                "mean_probability": 0.8522157662941989,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9689256969665027,
+                "count": 541,
+                "lower": 0.9,
+                "match_mass": 21.32852524728817,
+                "mean_probability": 0.9472128394922635,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47677278024712094
+          },
+          "frame_weighted": {
+            "brier": 0.18438355712177684,
+            "log_loss": 0.5432793440540878
+          },
+          "match_weighted": {
+            "brier": 0.17365249087145757,
+            "log_loss": 0.5172300211559946
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.01,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.0337236579067198,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.04621981181496611,
+                "count": 827,
+                "lower": 0.0,
+                "match_mass": 32.51590087084205,
+                "mean_probability": 0.04820969686633664,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.13350514602873806,
+                "count": 745,
+                "lower": 0.1,
+                "match_mass": 27.759546724333855,
+                "mean_probability": 0.15033580640618793,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.20270196513912753,
+                "count": 876,
+                "lower": 0.2,
+                "match_mass": 31.92809118498374,
+                "mean_probability": 0.25097347303809103,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.31168289246696723,
+                "count": 1092,
+                "lower": 0.3,
+                "match_mass": 39.61868184072448,
+                "mean_probability": 0.352577759268137,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4341792276694944,
+                "count": 2110,
+                "lower": 0.4,
+                "match_mass": 79.06019409600206,
+                "mean_probability": 0.46025081179520655,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5697308053532952,
+                "count": 1403,
+                "lower": 0.5,
+                "match_mass": 51.104454492359395,
+                "mean_probability": 0.5434279771530118,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.711543272089771,
+                "count": 862,
+                "lower": 0.6,
+                "match_mass": 31.45975462261115,
+                "mean_probability": 0.6467904702471365,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.8158708095597108,
+                "count": 648,
+                "lower": 0.7,
+                "match_mass": 23.840405163968313,
+                "mean_probability": 0.7481773263990275,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8984756546254531,
+                "count": 600,
+                "lower": 0.8,
+                "match_mass": 22.120330796251316,
+                "mean_probability": 0.8498281001715406,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.97194050068853,
+                "count": 690,
+                "lower": 0.9,
+                "match_mass": 27.592640207923623,
+                "mean_probability": 0.951979137472256,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47720035698233804
+          },
+          "frame_weighted": {
+            "brier": 0.1844344359988081,
+            "log_loss": 0.5423002452382886
+          },
+          "match_weighted": {
+            "brier": 0.17227132927203048,
+            "log_loss": 0.51201400934158
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 0.1,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.029132023763414436,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.048768730044563544,
+                "count": 870,
+                "lower": 0.0,
+                "match_mass": 34.21435996860622,
+                "mean_probability": 0.04742063099793095,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.1414640541318995,
+                "count": 753,
+                "lower": 0.1,
+                "match_mass": 27.97105040243023,
+                "mean_probability": 0.1507760969915235,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.20795274998236968,
+                "count": 855,
+                "lower": 0.2,
+                "match_mass": 31.17485004042313,
+                "mean_probability": 0.25132558372167196,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.31330416336845845,
+                "count": 1096,
+                "lower": 0.3,
+                "match_mass": 39.859626855193326,
+                "mean_probability": 0.3522755899358867,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.4369816452321305,
+                "count": 2053,
+                "lower": 0.4,
+                "match_mass": 76.89897870355706,
+                "mean_probability": 0.4602195662563689,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5643258959535187,
+                "count": 1406,
+                "lower": 0.5,
+                "match_mass": 51.178210259288086,
+                "mean_probability": 0.5446075032313562,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.7139045750508936,
+                "count": 830,
+                "lower": 0.6,
+                "match_mass": 30.283274921450953,
+                "mean_probability": 0.64739058080637,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.7957325111780562,
+                "count": 656,
+                "lower": 0.7,
+                "match_mass": 24.08928162975917,
+                "mean_probability": 0.7485367919257286,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8960821975921829,
+                "count": 618,
+                "lower": 0.8,
+                "match_mass": 22.764274071417994,
+                "mean_probability": 0.8505431074657682,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9708062821328839,
+                "count": 716,
+                "lower": 0.9,
+                "match_mass": 28.56609314787383,
+                "mean_probability": 0.9534650473393497,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.47742366082937676
+          },
+          "frame_weighted": {
+            "brier": 0.18496499636034863,
+            "log_loss": 0.5435405356457782
+          },
+          "match_weighted": {
+            "brier": 0.172478263938851,
+            "log_loss": 0.5122530170170614
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 1.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.028633682173941997,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.047913513220108256,
+                "count": 872,
+                "lower": 0.0,
+                "match_mass": 34.30328469978901,
+                "mean_probability": 0.04715868503594733,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.1421645141069898,
+                "count": 754,
+                "lower": 0.1,
+                "match_mass": 28.00908660834161,
+                "mean_probability": 0.15046392986808005,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.21195735322922268,
+                "count": 854,
+                "lower": 0.2,
+                "match_mass": 31.10780484681468,
+                "mean_probability": 0.25107473334688707,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.3127532150766673,
+                "count": 1097,
+                "lower": 0.3,
+                "match_mass": 39.908565383747785,
+                "mean_probability": 0.3521112828755377,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.43602118881903934,
+                "count": 2048,
+                "lower": 0.4,
+                "match_mass": 76.61663088600287,
+                "mean_probability": 0.4601222661250052,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5660278672851031,
+                "count": 1406,
+                "lower": 0.5,
+                "match_mass": 51.289895018855375,
+                "mean_probability": 0.5446840521643881,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.7086930202869411,
+                "count": 827,
+                "lower": 0.6,
+                "match_mass": 30.17143724308404,
+                "mean_probability": 0.647587337718124,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.7972886499179417,
+                "count": 654,
+                "lower": 0.7,
+                "match_mass": 23.940440570609113,
+                "mean_probability": 0.7483711058352829,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8963788070726788,
+                "count": 619,
+                "lower": 0.8,
+                "match_mass": 22.86388628625853,
+                "mean_probability": 0.8501084314320763,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9690182140930164,
+                "count": 722,
+                "lower": 0.9,
+                "match_mass": 28.788968456496974,
+                "mean_probability": 0.9534327457562753,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4774512347072862
+          },
+          "frame_weighted": {
+            "brier": 0.18503903596489116,
+            "log_loss": 0.5437226000296145
+          },
+          "match_weighted": {
+            "brier": 0.17251417441561898,
+            "log_loss": 0.5123151548869378
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      },
+      {
+        "C": 10.0,
+        "validation": {
+          "calibration": {
+            "blue_win_rate": 0.47956403269754766,
+            "ece_10_match_weighted": 0.02873936138743844,
+            "equal_width_bins": [
+              {
+                "blue_win_rate": 0.04787474567763413,
+                "count": 873,
+                "lower": 0.0,
+                "match_mass": 34.33106247756679,
+                "mean_probability": 0.047160919787308984,
+                "upper": 0.1
+              },
+              {
+                "blue_win_rate": 0.1423056445417619,
+                "count": 753,
+                "lower": 0.1,
+                "match_mass": 27.981308830563833,
+                "mean_probability": 0.15044311672808672,
+                "upper": 0.2
+              },
+              {
+                "blue_win_rate": 0.21195735322922268,
+                "count": 854,
+                "lower": 0.2,
+                "match_mass": 31.10780484681468,
+                "mean_probability": 0.2510180737760467,
+                "upper": 0.3
+              },
+              {
+                "blue_win_rate": 0.3125228923455322,
+                "count": 1098,
+                "lower": 0.3,
+                "match_mass": 39.93797714845367,
+                "mean_probability": 0.3521091493742724,
+                "upper": 0.4
+              },
+              {
+                "blue_win_rate": 0.43581160871393826,
+                "count": 2047,
+                "lower": 0.4,
+                "match_mass": 76.58394311802098,
+                "mean_probability": 0.4601340235263977,
+                "upper": 0.5
+              },
+              {
+                "blue_win_rate": 0.5663476529856253,
+                "count": 1405,
+                "lower": 0.5,
+                "match_mass": 51.265393244353604,
+                "mean_probability": 0.5446813774115653,
+                "upper": 0.6
+              },
+              {
+                "blue_win_rate": 0.7086282689176466,
+                "count": 827,
+                "lower": 0.6,
+                "match_mass": 30.164732262241127,
+                "mean_probability": 0.6475441955002735,
+                "upper": 0.7
+              },
+              {
+                "blue_win_rate": 0.7975802064938927,
+                "count": 655,
+                "lower": 0.7,
+                "match_mass": 23.9749233292298,
+                "mean_probability": 0.7483907315169299,
+                "upper": 0.8
+              },
+              {
+                "blue_win_rate": 0.8963788070726788,
+                "count": 619,
+                "lower": 0.8,
+                "match_mass": 22.86388628625853,
+                "mean_probability": 0.850185934727391,
+                "upper": 0.9
+              },
+              {
+                "blue_win_rate": 0.9690182140930164,
+                "count": 722,
+                "lower": 0.9,
+                "match_mass": 28.788968456496974,
+                "mean_probability": 0.9534716326322996,
+                "upper": 1.0
+              }
+            ],
+            "mean_probability": 0.4774540547182247
+          },
+          "frame_weighted": {
+            "brier": 0.1850467076421649,
+            "log_loss": 0.5437415609761962
+          },
+          "match_weighted": {
+            "brier": 0.17251796216111456,
+            "log_loss": 0.5123218750410211
+          },
+          "matches": 367,
+          "observations": 9853
+        }
+      }
+    ]
+  },
+  "objective": "validation match-weighted log loss; smaller C breaks exact ties",
+  "posthoc_calibration": false,
+  "refit_on_validation": false,
+  "selected_C": {
+    "in_game": 0.001,
+    "opening": 0.01,
+    "statistics_only": 0.01,
+    "statistics_only_legacy_C1": 1.0
+  },
+  "train_weighting": "one vote per snapshot (legacy statistics-model training convention)"
+}
