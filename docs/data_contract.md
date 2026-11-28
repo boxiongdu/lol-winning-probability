@@ -1,5 +1,9 @@
 # Initial shared data contract
 
+For B's versioned champion-aware interface, fixed composition, stage handover and
+A-compatible prediction payload, see [the champion model contract](member_b_champion_models.md).
+The original statistics-only API below remains supported for the Week 8 app.
+
 The Week 8 storage schema is implemented in `sql/001_ingestion.sql`; see `data_dictionary.md`. Model and game interfaces below remain proposals for B/C to confirm.
 
 ## Historical states
